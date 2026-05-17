@@ -1,0 +1,8 @@
+google-play-scraper
+pandas
+numpy
+matplotlib
+scikit-learn
+tensorflow
+keras
+wordcloud
