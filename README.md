@@ -10,25 +10,11 @@
 
 
 
-\---
-
-
-
 \## Project Overview
 
 
 
-This project builds an automatic sentiment classification system for user reviews
-
-of the myBCA mobile banking application from the Google Play Store.
-
-The model classifies each review into three categories - Positive, Neutral, or
-
-Negative - using a deep learning approach with LSTM (Long Short-Term Memory).
-
-
-
-\---
+This project builds an automatic sentiment classification system for user reviews of the myBCA mobile banking application from the Google Play Store. The model classifies each review into three categories - Positive, Neutral, or Negative - using a deep learning approach with LSTM (Long Short-Term Memory).
 
 
 
@@ -36,31 +22,15 @@ Negative - using a deep learning approach with LSTM (Long Short-Term Memory).
 
 
 
-project-repo/
+\- data/ - Dataset instructions
 
-+-- README.md
+\- notebooks/ - Jupyter notebooks
 
-+-- data/
+\- src/ - Source code
 
-|   +-- README.md
+\- reports/ - Weekly progress reports
 
-+-- notebooks/
-
-+-- src/
-
-+-- reports/
-
-|   +-- week-01.md
-
-+-- results/
-
-+-- requirements.txt
-
-+-- final-report.md
-
-
-
-\---
+\- results/ - Saved figures and evaluation results
 
 
 
@@ -78,10 +48,6 @@ project-repo/
 
 
 
-\---
-
-
-
 \## Weekly Progress
 
 
@@ -90,11 +56,5 @@ project-repo/
 
 |---|---|---|
 
-| Week 1 | Done | Data collection, EDA, repository setup |
-
-| Week 2 | In Progress | Preprocessing, baseline model |
-
-| Week 3 | Upcoming | LSTM model training |
-
-| Week 4 | Upcoming | Improvement, Streamlit app, final report |
+| Week 1 | Done |
 
