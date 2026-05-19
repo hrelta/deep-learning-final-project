@@ -16,6 +16,8 @@ Negative - using a deep learning approach with LSTM (Long Short-Term Memory).
 ---
 
 ## Repository Structure
+
+```
 C:.
 │   final-report.md
 │   project-proposal.md
@@ -42,6 +44,7 @@ C:.
 │       eda_wordcloud.png
 │
 └───src
+```
 ---
 
 ## Dataset
@@ -58,6 +61,6 @@ C:.
 | Week | Status | Focus |
 |---|---|---|
 | Week 1 | Done | Data collection, EDA, repository setup |
-| Week 2 | In Progress | Preprocessing, baseline model |
+| Week 2 | Done | Preprocessing, baseline model |
 | Week 3 | Upcoming | LSTM model training |
 | Week 4 | Upcoming | Improvement, Streamlit app, final report |
