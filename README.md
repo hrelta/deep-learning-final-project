@@ -16,19 +16,32 @@ Negative - using a deep learning approach with LSTM (Long Short-Term Memory).
 ---
 
 ## Repository Structure
-
-project-repo/
-+-- README.md
-+-- data/
-|   +-- README.md
-+-- notebooks/
-+-- src/
-+-- reports/
-|   +-- week-01.md
-+-- results/
-+-- requirements.txt
-+-- final-report.md
-
+C:.
+│   final-report.md
+│   project-proposal.md
+│   proposal_elvia.pdf
+│   README.md
+│   requirements.txt
+│
+├───data
+│       README.md
+│
+├───notebooks
+│       week01_data_collection.ipynb
+│       week01_eda.ipynb
+│       week02_preprocessing.ipynb
+│
+├───reports
+│       week-01.md
+│       week-02.md
+│
+├───results
+│       baseline_confusion_matrix.png
+│       eda_label_distribution.png
+│       eda_review_length.png
+│       eda_wordcloud.png
+│
+└───src
 ---
 
 ## Dataset
