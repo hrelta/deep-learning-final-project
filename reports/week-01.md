@@ -2,7 +2,7 @@
 
 **Author:** Elvia Aptanisa
 **Week:** 1
-**Date:** May 17-23, 2026
+**Date:** May 17, 2026
 
 ---
 
