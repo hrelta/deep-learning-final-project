@@ -2,17 +2,14 @@ import streamlit as st
 import numpy as np
 import re
 import string
-import tf_keras as keras
-from tf_keras.models import load_model
-from tf_keras.preprocessing.text import Tokenizer
-from tf_keras.preprocessing.sequence import pad_sequences
-from sklearn.preprocessing import LabelEncoder
 import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
+import pickle
 
-st.set_page_config(
-    page_title="myBCA Sentiment Analyzer",
-    layout="centered"
-)
+st.set_page_config(page_title="myBCA Sentiment Analyzer", layout="centered")
 
 st.title("myBCA Review Sentiment Analyzer")
 st.markdown("Analyze the sentiment of myBCA mobile banking app reviews.")
@@ -35,17 +32,18 @@ def load_everything():
     df['review_clean'] = df['review'].apply(clean_text)
     df = df[df['review_clean'].str.strip() != '']
 
-    tokenizer = Tokenizer(num_words=10000, oov_token='<OOV>')
-    tokenizer.fit_on_texts(df['review_clean'])
+    tfidf = TfidfVectorizer(max_features=5000)
+    X = tfidf.fit_transform(df['review_clean'])
 
     le = LabelEncoder()
-    le.fit(df['sentiment'])
+    y = le.fit_transform(df['sentiment'])
 
-    model = load_model("bilstm_sentiment_model.keras")
+    model = LogisticRegression(max_iter=1000, random_state=42)
+    model.fit(X, y)
 
-    return model, tokenizer, le
+    return model, tfidf, le
 
-model, tokenizer, le = load_everything()
+model, tfidf, le = load_everything()
 
 def predict_sentiment(text):
     def clean_text(text):
@@ -58,13 +56,12 @@ def predict_sentiment(text):
         return text
 
     cleaned = clean_text(text)
-    seq = tokenizer.texts_to_sequences([cleaned])
-    padded = pad_sequences(seq, maxlen=100, padding='post', truncating='post')
-    pred_prob = model.predict(padded, verbose=0)
-    pred_class = np.argmax(pred_prob, axis=1)[0]
+    vec = tfidf.transform([cleaned])
+    pred_class = model.predict(vec)[0]
+    pred_prob = model.predict_proba(vec)[0]
     label = le.inverse_transform([pred_class])[0]
-    confidence = pred_prob[0][pred_class] * 100
-    return label, confidence, pred_prob[0]
+    confidence = pred_prob[pred_class] * 100
+    return label, confidence, pred_prob
 
 st.subheader("Enter a myBCA Review")
 review_input = st.text_area(
@@ -88,8 +85,7 @@ if st.button("Analyze Sentiment", use_container_width=True):
             st.info(f"Sentiment: {label} ({confidence:.1f}% confidence)")
 
         st.markdown("**Probability breakdown:**")
-        classes = le.classes_
-        for i, cls in enumerate(classes):
+        for i, cls in enumerate(le.classes_):
             st.progress(float(probs[i]), text=f"{cls}: {probs[i]*100:.1f}%")
 
 st.markdown("---")
