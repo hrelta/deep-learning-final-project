@@ -15,6 +15,11 @@ Negative - using a deep learning approach with LSTM (Long Short-Term Memory).
 
 ---
 
+## Live Demo
+
+Try the app here: https://mybca-sentiment-analyzer.streamlit.app
+---
+
 ## Repository Structure
 
 ```
@@ -63,4 +68,4 @@ C:.
 | Week 1 | Done | Data collection, EDA, repository setup |
 | Week 2 | Done | Preprocessing, baseline model |
 | Week 3 | Done | LSTM model training |
-| Week 4 | Upcoming | Improvement, Streamlit app, final report |
+| Week 4 | Done | Error analysis, Streamlit app, final report |
