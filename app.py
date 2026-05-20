@@ -19,7 +19,7 @@ st.markdown("---")
 
 @st.cache_resource
 def load_everything():
-    df = pd.read_csv("mybca_reviews.csv")
+    df = pd.read_csv("data/mybca_reviews.csv")
     df = df.drop_duplicates(subset='review', keep='first')
 
     def clean_text(text):
