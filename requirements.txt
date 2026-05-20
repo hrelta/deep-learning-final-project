@@ -1,9 +1,5 @@
-google-play-scraper
+streamlit
+tensorflow-cpu
 pandas
 numpy
-matplotlib
 scikit-learn
-tensorflow
-keras
-wordcloud
-streamlit
