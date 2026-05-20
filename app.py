@@ -2,9 +2,10 @@ import streamlit as st
 import numpy as np
 import re
 import string
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.preprocessing.sequence import pad_sequences
+import tf_keras as keras
+from tf_keras.models import load_model
+from tf_keras.preprocessing.text import Tokenizer
+from tf_keras.preprocessing.sequence import pad_sequences
 from sklearn.preprocessing import LabelEncoder
 import pandas as pd
 
