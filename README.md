@@ -62,5 +62,5 @@ C:.
 |---|---|---|
 | Week 1 | Done | Data collection, EDA, repository setup |
 | Week 2 | Done | Preprocessing, baseline model |
-| Week 3 | Upcoming | LSTM model training |
+| Week 3 | Done | LSTM model training |
 | Week 4 | Upcoming | Improvement, Streamlit app, final report |
